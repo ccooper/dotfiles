@@ -1,0 +1,63 @@
+[defaults]
+diff = -p
+
+[ui]
+username = Chris Cooper <ccooper@deadsquid.com>
+merge = kdiff3
+ignore = /Users/ccooper/.hgignore
+
+[email]
+from = ccooper@deadsquid.com
+
+[merge-tools]
+kdiff3.args = $base $local $other -o $output
+filemerge.executable = opendiff-w
+filemerge.args = $local $other -ancestor $base -merge $output
+
+[extensions]
+convert=
+mq =
+churn=
+qup = /Users/ccooper/bin/qup.py
+#qimportbz = /Users/ccooper/bin/qimportbz
+rebase =
+color =
+pager =
+
+[alias]
+show = log --patch --verbose --rev
+
+[pager]
+pager = LESS=FRSXQ less
+quiet = True
+attend = diff,status,log,qdiff,blame,annotate,pdiff,glog,show
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8
+
+[hooks]
+precommit.missing = /Users/ccooper/bin/check_for_missing_files.bash
+precommit.json = python:/Users/ccooper/bin/hgjsonhook.py:run
+precommit.localtest = /Users/ccooper/bin/check_for_local_test.bash
+
+[paths]
+central = https://hg.mozilla.org/mozilla-central
+central-push = ssh://hg.mozilla.org/mozilla-central
+
+inbound = https://hg.mozilla.org/integration/mozilla-inbound
+inbound-push = ssh://hg.mozilla.org/integration/mozilla-inbound
+
+aurora = https://hg.mozilla.org/releases/mozilla-aurora
+aurora-push = ssh://hg.mozilla.org/releases/mozilla-aurora
+
+beta = https://hg.mozilla.org/releases/mozilla-beta
+beta-push = ssh://hg.mozilla.org/releases/mozilla-beta
+
+release = http://hg.mozilla.org/releases/mozilla-release
+release-push = ssh://hg.mozilla.org/releases/mozilla-release
+
+tools = http://hg.mozilla.org/build/tools
+tools-push = ssh://hg.mozilla.org/build/tools
+
