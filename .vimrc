@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set hlsearch
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -42,7 +43,8 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line.
 
 filetype plugin indent on
-set number
+set nonumber
+set ruler
 syntax on
 
 " splits
@@ -60,4 +62,4 @@ function! StripTrailingWhitespace()
   endif
   normal `Z
 endfunction
-autocmd BufWritePre *.cpp,*.hpp,*.i,*.sh,*.bash,*.py :call StripTrailingWhitespace()
+autocmd BufWritePre *.cpp,*.hpp,*.i,*.sh,*.bash,*.py,*.html,*.js,*.css :call StripTrailingWhitespace()
