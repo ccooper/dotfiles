@@ -45,6 +45,9 @@ filetype plugin indent on    " required
 filetype plugin indent on
 set nonumber
 set ruler
+set tabstop=4
+set shiftwidth=4
+set expandtab
 syntax on
 
 " splits
@@ -62,4 +65,4 @@ function! StripTrailingWhitespace()
   endif
   normal `Z
 endfunction
-autocmd BufWritePre *.cpp,*.hpp,*.i,*.sh,*.bash,*.py,*.html,*.js,*.css :call StripTrailingWhitespace()
+autocmd BufWritePre *.cpp,*.hpp,*.i,*.sh,*.bash,*.py,*.html,*.js,*.json,*.css,*.pp :call StripTrailingWhitespace()

@@ -1,0 +1,11 @@
+[user]
+	email = ccooper@deadsquid.com
+	name = Chris Cooper
+[core]
+	editor = /usr/bin/vim
+[color]
+	ui = auto
+[push]
+    default = simple
+[alias]
+    sync = "!git fetch upstream && git checkout master && git merge upstream/master"
